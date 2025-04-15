@@ -1,48 +1,44 @@
-.Boton {
-                
-    z-index: 110;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 20px;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: none;
-    transition: all 0.3s ease;
-    opacity: 0;
-    cursor: pointer;
-    animation: animate 1s ease-in-out 0.9s 1 forwards;
+.Botón {
+    z-index: 110; /* Establece el índice z para la superposición */
+    display: inline-flex; /* Hace que el contenedor sea un flexbox en línea */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 5px; /* Espaciado interno del contenedor */
+    margin: 10px; /* Margen exterior del contenedor */
+    border-radius: 20px; /* Borde redondeado del contenedor */
+    background: transparent; /* Fondo transparente */
+    backdrop-filter: blur(10px); /* Aplica un filtro de desenfoque al fondo */
+    -webkit-backdrop-filter: blur(10px); /* Filtro de desenfoque para navegadores WebKit */
+    box-shadow: none; /* Sin sombra por defecto */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    opacity: 0; /* Opacidad inicial */
+    cursor: pointer; /* Cursor de puntero al pasar por encima */
+    animation: animate 1s ease-in-out 0.9s 1 forwards; /* Animación llamada 'animate' */
 
     button {
-        
-        z-index: 110;
-        border: none;
-        background: transparent;
-        font-size: 16px;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        backdrop-filter: none;
+        z-index: 110; /* Índice z para el botón */
+        border: none; /* Sin borde */
+        background: transparent; /* Fondo transparente */
+        font-size: 16px; /* Tamaño de fuente */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        cursor: pointer; /* Cursor de puntero */
+        font-weight: bold; /* Texto en negrita */
+        transition: all 0.3s ease; /* Transición suave para todos los cambios */
+        backdrop-filter: none; /* Sin filtro de desenfoque */
     }
 
     &:hover {
-        
-        background: rgba(255, 255, 255, 0.7);
-        color: #000;
-        border: none;
-        box-shadow: 5px 5px 10px #bebebe;
-        transform: scale(1.10);
+        background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente al pasar por encima */
+        color: #000; /* Color del texto */
+        border: none; /* Sin borde */
+        box-shadow: 5px 5px 10px #bebebe; /* Sombra al pasar por encima */
+        transform: scale(1.10); /* Escala del botón al pasar por encima */
     }
 
     button:active {
-
-        border-radius: 15px;
-        background: #e0e0e0;
-        box-shadow: inset -10px -10px 20px #ffffff;
-        color: #000;
+        border-radius: 15px; /* Borde redondeado al hacer clic */
+        background: #e0e0e0; /* Fondo gris claro al hacer clic */
+        box-shadow: inset -10px -10px 20px #ffffff; /* Sombra interna al hacer clic */
+        color: #000; /* Color del texto */
     }
 }

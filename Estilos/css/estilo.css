@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -119,43 +120,76 @@
     .ContenedorCarrusel .ItemC:nth-child(1) .Contenido {
       display: block; }
 
-.Boton {
+.Botón {
   z-index: 110;
+  /* Establece el índice z para la superposición */
   display: inline-flex;
+  /* Hace que el contenedor sea un flexbox en línea */
   justify-content: center;
+  /* Centra horizontalmente el contenido */
   align-items: center;
+  /* Centra verticalmente el contenido */
   padding: 5px;
+  /* Espaciado interno del contenedor */
   margin: 10px;
+  /* Margen exterior del contenedor */
   border-radius: 20px;
+  /* Borde redondeado del contenedor */
   background: transparent;
+  /* Fondo transparente */
   backdrop-filter: blur(10px);
+  /* Aplica un filtro de desenfoque al fondo */
   -webkit-backdrop-filter: blur(10px);
+  /* Filtro de desenfoque para navegadores WebKit */
   box-shadow: none;
+  /* Sin sombra por defecto */
   transition: all 0.3s ease;
+  /* Transición suave para todos los cambios */
   opacity: 0;
+  /* Opacidad inicial */
   cursor: pointer;
-  animation: animate 1s ease-in-out 0.9s 1 forwards; }
-  .Boton button {
+  /* Cursor de puntero al pasar por encima */
+  animation: animate 1s ease-in-out 0.9s 1 forwards;
+  /* Animación llamada 'animate' */ }
+  .Botón button {
     z-index: 110;
+    /* Índice z para el botón */
     border: none;
+    /* Sin borde */
     background: transparent;
+    /* Fondo transparente */
     font-size: 16px;
+    /* Tamaño de fuente */
     padding: 10px 20px;
+    /* Espaciado interno del botón */
     cursor: pointer;
+    /* Cursor de puntero */
     font-weight: bold;
+    /* Texto en negrita */
     transition: all 0.3s ease;
-    backdrop-filter: none; }
-  .Boton:hover {
+    /* Transición suave para todos los cambios */
+    backdrop-filter: none;
+    /* Sin filtro de desenfoque */ }
+  .Botón:hover {
     background: rgba(255, 255, 255, 0.7);
+    /* Fondo semi-transparente al pasar por encima */
     color: #000;
+    /* Color del texto */
     border: none;
+    /* Sin borde */
     box-shadow: 5px 5px 10px #bebebe;
-    transform: scale(1.1); }
-  .Boton button:active {
+    /* Sombra al pasar por encima */
+    transform: scale(1.1);
+    /* Escala del botón al pasar por encima */ }
+  .Botón button:active {
     border-radius: 15px;
+    /* Borde redondeado al hacer clic */
     background: #e0e0e0;
+    /* Fondo gris claro al hacer clic */
     box-shadow: inset -10px -10px 20px #ffffff;
-    color: #000; }
+    /* Sombra interna al hacer clic */
+    color: #000;
+    /* Color del texto */ }
 
 .Redes {
   width: 100%;
