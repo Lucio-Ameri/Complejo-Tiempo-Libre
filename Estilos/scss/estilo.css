@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+.ContenedorCarrusel {
+  position: relative;
+}
+.ContenedorCarrusel .ContenedorMenu {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 110;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable {
+  display: inline-flex;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable .ItemM {
+  padding: 10px;
+  margin: 0 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable .ItemM img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable .ItemM:hover {
+  transform: scale(1.05);
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable .ItemM:hover img {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.1));
+}
+.ContenedorCarrusel .ContenedorMenu .MenuDeslizable .ItemM.activo {
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow: inset 10px 10px 20px #acacac, inset -10px -10px 20px #ffffff;
+}
+
+.ContenedorCarrusel {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.ContenedorCarrusel .ItemC {
+  width: 180px;
+  height: 250px;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-70%);
+  left: 70%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  background-position: 50% 50%;
+  background-size: cover;
+  z-index: 100;
+  transition: 1s;
+}
+.ContenedorCarrusel .ItemC:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+.ContenedorCarrusel .ItemC:nth-child(2) {
+  left: 67%;
+}
+.ContenedorCarrusel .ItemC:nth-child(3) {
+  left: calc(67% + 200px);
+}
+.ContenedorCarrusel .ItemC:nth-child(n+4) {
+  left: calc(67% + 400px);
+  opacity: 0;
+}
+.ContenedorCarrusel .ItemC .Contenido {
+  position: absolute;
+  top: 25%;
+  left: clamp(1rem, 5vw, 50px);
+  width: 60%;
+  transform: none;
+  text-align: center;
+  display: none;
+  color: #fff;
+}
+.ContenedorCarrusel .ItemC .Contenido .Titulo {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.ContenedorCarrusel .ItemC .Contenido .Descripcion {
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-align: justify;
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+.ContenedorCarrusel .ItemC:nth-child(1) .Contenido {
+  display: block;
+}
+
+.Boton {
+  z-index: 110;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 20px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+  animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+.Boton button {
+  z-index: 110;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+.Boton:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #000;
+  border: none;
+  box-shadow: 5px 5px 10px #bebebe;
+  transform: scale(1.1);
+}
+.Boton button:active {
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow: inset -10px -10px 20px #ffffff;
+  color: #000;
+}
+
+.Redes {
+  width: 100%;
+  padding: 1rem 3rem;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: rgba(50, 50, 93, 0.25) 21px 21px 42px inset, rgba(0, 0, 0, 0.3) -21px -21px 42px inset;
+}
+.Redes ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem;
+}
+.Redes li {
+  display: flex;
+  align-items: center;
+}
+.Redes li a {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  gap: 10px;
+}
+.Redes li a img {
+  height: 20px;
+  width: 20px;
+}
+.Redes li a span.hover-underline-animation {
+  position: relative;
+  padding-bottom: 5px;
+}
+.Redes li a span.hover-underline-animation::after {
+  background: linear-gradient(to right, #fff, #aeafaf, #505050);
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.Redes li a:hover span.hover-underline-animation::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.Redes li h4 {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.Redes li h4 a {
+  margin-left: 0.3rem;
+  color: #fff;
+  text-decoration: none;
+}
+.Redes li h4 a:hover {
+  text-decoration: underline;
+  color: #005fa3;
+}
+
+body {
+  background: #000;
+}/*# sourceMappingURL=estilo.css.map */
