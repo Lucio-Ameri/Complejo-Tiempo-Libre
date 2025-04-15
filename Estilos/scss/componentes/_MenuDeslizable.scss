@@ -1,0 +1,70 @@
+.ContenedorCarrusel {
+    position: relative; // Muy importante para que el menú se posicione respecto a este contenedor
+
+    .ContenedorMenu {
+
+        position: absolute;
+        bottom: 0; // Separado del borde inferior del carrusel
+        left: 50%; // Centrado horizontalmente
+        transform: translateX(-50%);
+        z-index: 110; //establece un orden de prioridad
+        display: flex; //Aplica un contenedor flexible para alinear elementos hijos.
+        justify-content: center; //Centra los elementos hijos horizontalmente dentro del contenedor.
+        width: 100%; //Establece que el componente ocupará el 100% del ancho disponible.
+      
+        .MenuDeslizable {
+    
+            display: inline-flex; //Convierte la lista en un contenedor flexible en línea.
+            list-style: none; //Elimina los estilos de viñetas de la lista.
+            background: rgba(255, 255, 255, 0.7); //Fondo semitransparente blanco para la lista.
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); //Aplica un efecto de desenfoque al fondo.
+            border-radius: 20px; //Borde redondeado de 20px.
+            padding: 10px; //Espaciado interno de 10px.
+            margin: 10px; //Margen externo de 10px.
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); //Sombra suave para el efecto de elevación.
+            justify-content: center; align-items: center; //Centra los elementos hijos horizontal y verticalmente dentro de la lista.
+      
+            .ItemM {
+    
+                padding: 10px; //Espaciado interno de 10px
+                margin: 0 5px; //Margen de 0 arriba/abajo y 5px izquierda/derecha para separar los elementos.
+                align-items: center; //Centra verticalmente los elementos .Item.
+                cursor: pointer; //Cuando pasa el cursor, cambia de forma.
+                transition: all 0.3s ease; //Transición suave de 0.3 segundos para todos los cambios de propiedad.
+        
+                img {
+    
+                    width: 30px; height: 30px; //Establece un tamaño de 50x50px para las imágenes.
+                    object-fit: contain; //Ajusta la imagen dentro de su contenedor manteniendo su relación de aspecto.
+                    transition: all 0.3s ease; //Transición suave de 0.3 segundos para todos los cambios de propiedad.
+                    cursor: pointer; //Cuando pasa el cursor, cambia de forma.
+                }
+        
+                &:hover {
+    
+                    transform: scale(1.05); //agranda el elemento un 5% al hacer hover, creando un efecto de zoom.
+                    border-radius: 15px; //redondea las esquinas del elemento a 15 píxeles.
+                    background: #e0e0e0; //cambia el color de fondo a un gris claro.
+                    box-shadow: // aplica una sombra externa doble que crea un efecto tipo "neumorphism suave":
+                        5px 5px 10px #bebebe, //sombra hacia abajo a la derecha (gris).
+                        -5px -5px 10px #ffffff; //luz hacia arriba a la izquierda (blanca), da sensación de relieve.
+        
+                    img {
+    
+                        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.1)); //le agrega una sombra flotante, como si se despegara del fondo.
+                    }
+                }
+    
+                &.activo {
+                    
+                    border-radius: 15px; //mantiene el mismo redondeado que en hover.
+                    background: #e0e0e0; //mismo fondo gris claro.
+                    box-shadow: // a diferencia del hover, esta sombra es interna (inset), como si el botón estuviera presionado:
+                        inset 10px 10px 20px #acacac, //sombra hacia adentro desde abajo-derecha.
+                        inset -10px -10px 20px #ffffff; //luz hacia adentro desde arriba-izquierda.
+                }
+            }
+        }
+    }
+}
+
